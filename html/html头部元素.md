@@ -13,3 +13,26 @@
 ```html
 <link href="style.css" rel="stylesheet">
 ```
+
+#### [`<title>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+
+`<title>` 用于定义文档的标题
+
+```html
+<title>Awesome page title</title>
+```
+
+#### [`<style>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style)
+
+`<style>` 用于为html文档定义样式
+
+```html
+<style type="text/css">
+body {
+  color:red;
+}
+</style>
+```
+
+注: *如果不设置type，则默认为text/css*
+
