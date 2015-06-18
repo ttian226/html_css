@@ -59,7 +59,7 @@ body {
 * `<meta>`标签始终位于 head 元素中
 * 元数据可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务
 
-*一些例子*
+*一些例子:*
 
 ```html
 <!-- 定义html4文档的字符编码为utf-8 -->
@@ -84,8 +84,10 @@ body {
 <meta name="author" content="ttian226">
 ```
 
+*设置IE浏览器兼容模式，[参考链接](http://wenrunchang123.iteye.com/blog/1397507)*
+
 ```html
 <meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1">
 ```
-*设置IE浏览器兼容模式，[参考链接](http://wenrunchang123.iteye.com/blog/1397507)*
+
 
