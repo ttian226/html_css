@@ -36,3 +36,17 @@ body {
 
 注: *如果不设置type，则默认为text/css*
 
+#### [`<base>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base)
+
+`<base>` 标签为页面上的所有链接规定默认地址或默认目标（target）
+
+```html
+<base href="http://www.baidu.com">
+```
+*设置页面上所有链接为`http://www.baidu.com`*
+
+```html
+<base href="http://www.baidu.com" target="_blank">
+```
+*设置页面上所有链接为`http://www.baidu.com`，并且在新标签页打开*
+
