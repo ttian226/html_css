@@ -1,0 +1,13 @@
+### css问题集合
+
+#### div中的文字如果是中文可以自动换行，如果是英文或数字不能自动换行，需要手动控制样式换行
+
+
+#### 关于float
+
+http://www.cnblogs.com/polk6/archive/2013/07/25/3142187.html
+
+
+#### 关于line-height
+
+http://www.cnblogs.com/dolphinX/p/3236686.html

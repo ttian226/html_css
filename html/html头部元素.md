@@ -90,4 +90,9 @@ body {
 <meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1">
 ```
 
+*可以让部分国产浏览器默认采用高速模式渲染页面*
+
+```html
+<meta name="renderer" content="webkit">
+```
 
