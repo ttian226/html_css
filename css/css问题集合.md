@@ -69,6 +69,10 @@
 
 * http://www.cnblogs.com/2050/archive/2012/08/10/2632256.html
 
+#### transition & transform & animation
+
+* http://www.zhangxinxu.com/wordpress/2010/11/css3-transitions-transforms和animation使用简介与应用展示/#two
+
 #### transition
 
 1 配合hover使用，当鼠标移入指定元素生效
@@ -127,6 +131,7 @@
   transition: all 4s ease;
 }
 
+/*动态加入active类，可以触发transition*/
 .active {
   background-color: #beceeb;
   color: #333;
