@@ -68,3 +68,43 @@
 #### word-wrap和word-break的区别
 
 * http://www.cnblogs.com/2050/archive/2012/08/10/2632256.html
+
+#### transition
+
+1 配合hover使用
+
+```css
+.trans_box {
+  padding: 20px;
+  background-color: #f0f3f9;
+}
+
+.trans_list {
+  width: 10%;
+  height: 64px;
+  background-color:#486AAA;
+  color:#fff;
+  margin: 10px 0px;
+  text-align: center;
+}
+
+/*hover触发后transition才生效*/
+.trans_list:hover {
+  background-color: #beceeb;
+  color: #333;
+  border-radius: 25px;
+  margin-left: 89%;
+  transform: rotate(360deg);
+}
+
+/*这里ease中的transition不是立即生效的，当hover后才会生效。all代表hover里的所有属性*/
+.ease {
+  transition: all 4s ease;
+}
+```
+
+```html
+<div id="transBox" class="trans_box">
+  <div class="trans_list ease">ease</div>
+</div>
+```
