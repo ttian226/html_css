@@ -71,7 +71,7 @@
 
 #### transition
 
-1 配合hover使用
+1 配合hover使用，当鼠标移入指定元素生效
 
 ```css
 .trans_box {
@@ -108,3 +108,45 @@
   <div class="trans_list ease">ease</div>
 </div>
 ```
+
+2. 使用js控制
+
+```css
+.trans_box {
+  padding: 20px;
+  background-color: #f0f3f9;
+}
+
+.trans_list {
+  width: 10%;
+  height: 64px;
+  background-color:#486AAA;
+  color:#fff;
+  margin: 10px 0px;
+  text-align: center;
+  transition: all 4s ease;
+}
+
+.active {
+  background-color: #beceeb;
+  color: #333;
+  border-radius: 25px;
+  margin-left: 89%;
+  transform: rotate(360deg);
+}
+```
+
+```html
+<div id="transBox" class="trans_box">
+  <div class="trans_list">ease</div>
+</div>
+```
+
+```javascript
+setTimeout(function () {
+  $('.trans_list').addClass('active');
+}, 1000);
+```
+
+* 这里通过js动态添加active类
+* 不能直接`$('.trans_list').addClass('active')`不会产生动画。需要使用setTimeout动态添加才能产生动画
