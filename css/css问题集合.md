@@ -75,7 +75,7 @@
 
 #### transition
 
-1 配合hover使用，当鼠标移入指定元素生效
+1. 配合hover使用，当鼠标移入指定元素生效
 
 ```css
 .trans_box {
@@ -110,6 +110,41 @@
 ```html
 <div id="transBox" class="trans_box">
   <div class="trans_list ease">ease</div>
+</div>
+```
+
+上面的例子可以这么写
+
+```css
+.trans_box {
+  padding: 20px;
+  background-color: #f0f3f9;
+}
+
+.trans_list {
+  width: 10%;
+  height: 64px;
+  background-color:#486AAA;
+  color:#fff;
+  margin: 10px 0px;
+  text-align: center;
+  transition: all 4s ease;  //把transition放到这里，但不会立即生效，需要hover触发后生效
+}
+
+.trans_list:hover {
+  background-color: #beceeb;
+  color: #333;
+  border-radius: 25px;
+  margin-left: 89%;
+  transform: rotate(360deg);
+}
+```
+
+这里把ease类去掉
+
+```html
+<div id="transBox" class="trans_box">
+  <div class="trans_list">ease</div>
 </div>
 ```
 
@@ -155,3 +190,129 @@ setTimeout(function () {
 
 * 这里通过js动态添加active类
 * 不能直接`$('.trans_list').addClass('active')`不会产生动画。需要使用setTimeout动态添加才能产生动画
+
+#### 使用animation
+
+```css
+#sport {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  border: 1px solid #dddddd;
+}
+
+#staff {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 3;
+  width: 180px;
+  height: 8px;
+  overflow: hidden;
+  background: #dddddd;
+  border-radius: 3px;
+  line-height: 20;
+  animation: mystaff 3s linear;
+}
+
+#ball {
+  position: absolute;
+  z-index: 3;
+  left: 90px;
+  bottom: 20px;
+  width: 30px;
+  height: 30px;
+  line-height: 20;
+  overflow: hidden;
+  background: #F6D66E;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(204, 102, 0, .8);
+  animation: myball 3s linear;
+}
+
+/*自定义动画myball，这里定义了球的移动*/
+@keyframes myball {
+  0% {
+    transform: translate(0, 0);
+  }
+  5% {
+    transform: translate(-90px, -100px);
+  }
+  18% {
+    transform: translate(0, -350px);
+  }
+  35% {
+    transform: translate(200px, 0);
+  }
+  46% {
+    transform: translate(380px, -160px);
+  }
+  60% {
+    transform: translate(250px, -350px);
+  }
+  78% {
+    transform: translate(60px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/*自定义动画mystaff，定义了滑杆的移动*/
+@keyframes mystaff {
+  0% {
+    transform: translate(0, 0);
+  }
+  6% {
+    transform: translate(260px, 0);
+  }
+  20% {
+    transform: translate(300px, 0);
+  }
+  30% {
+    transform: translate(300px, 0);
+  }
+  40% {
+    transform: translate(200px, 0);
+  }
+  65% {
+    transform: translate(40px, 0);
+  }
+  79% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+```
+
+```html
+<div id="sport">
+  <span id="ball">弹球</span>
+  <span id="staff">滑杆</span>
+</div>
+```
+
+* @keyframes用来自定义动画
+* 百分比是和移动时间对应的，反应的是某个时间点的状态。例如`animation: mystaff 3s linear`的移动时间是3秒，匀速运动。
+* 使用animation不像transition那样必须要hover来触发，它可以立即触发。当然也可以用hover来触发
+
+例如使用hover触发滑杆运动
+
+```css
+#staff {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 3;
+  width: 180px;
+  height: 8px;
+  overflow: hidden;
+  background: #dddddd;
+  border-radius: 3px;
+  line-height: 20;
+}
+#staff:hover {
+  animation: mystaff 3s linear;
+}
+```
